@@ -20,15 +20,15 @@ jobs:
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t devopsProject .
+        run: docker build -t devopsproject .
 
       - name: Run Simple Test
         run: |
           # Replace with your test commands
-          docker run devopsProject python manage.py test
+          docker run devopsproject python manage.py test
 
       - name: Tag Docker image
-        run: docker tag devopsProject:latest sokhna00/diic3devops:latest
+        run: docker tag devopsproject:latest sokhna00/diic3devops:latest
 
       - name: Push Docker image
         run: docker push sokhna00/diic3devops:latest
